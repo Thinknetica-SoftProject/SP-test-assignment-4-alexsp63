@@ -16,6 +16,18 @@
 #
 ## Решение:
 
+f = File.new("data/1.txt")
+content = f.read.split('')
+f.close
 
+floor = 0
+content.each do |s|
+    if s == '('
+        floor += 1
+    end
+    if s == ')'
+        floor -= 1
+    end
+end
 
-
+puts floor

@@ -10,4 +10,15 @@
 #
 ## Решение:
 
+f = File.new("data/3.txt")
+code = 0
+
+while line = f.gets
+    l = line.split(" ").map(&:to_i)
+    code += l.max - l.min
+end
+
+f.close
+
+puts code
 

@@ -16,3 +16,19 @@
 #
 ## Решение:
 
+require 'digest'
+
+inp = gets.chomp
+number = 1
+isEnd = false
+
+while !isEnd
+    hashed = Digest::MD5.hexdigest (inp + number.to_s)
+    if hashed[0..4] == '00000'
+        isEnd = true
+    else 
+        number += 1
+    end
+end
+
+puts number
